@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "setuptools_scm>=8.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ipp"
+dynamic = ["version"]
+authors = [
+  { name="Thibault Vatter", email="thibault.vatter@gmail.com" },
+]
+description = "Intro to Programming with Python"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = "~=3.11"
+dependencies = [
+  "setuptools>=64.0.0",
+  "setuptools_scm>=8.0.0",
+]
+
+# Development dependencies
+[project.optional-dependencies]
+dev = [
+  "pytest", # Testing framework
+  "pytest-dotenv", # Load environment variables from .env file
+  "pytest-cov", # Coverage report
+  "ruff", # Linter and formatter
+  "mypy", # Static type checker
+]
+
+[tool.setuptools_scm]
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+
+[project.urls]
+Homepage = "https://github.com/tvatter/ipp"
+Repository = "https://github.com/tvatter/ippgit"
+Issues = "https://github.com/tvatter/ipp/issues"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+testpaths = [
+  "tests"
+]
+addopts = "--cov=eventsim --cov-report html"
+
+# [tool.coverage.run]
+# omit = [
+#     # those files are not tested
+#     ]
+
+# [pytest]
+# env_files = ../.env
