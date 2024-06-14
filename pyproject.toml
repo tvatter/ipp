@@ -14,13 +14,18 @@ license = "MIT"
 homepage = "https://github.com/tvatter/ipp"
 repository = "https://github.com/tvatter/ipp.git"
 issues = "https://github.com/tvatter/ipp/issues"
+include = [
+    { path = "tests", format = "sdist" },
+    { path = "scripts", format = "sdist" }
+]
 
 [tool.poetry.dependencies]
-python = "~=3.11"
-pytest = "*"
+python = "~=3.12"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
+pytest = "*"
+pyhamcrest = "*"
 
 [tool.pytest.ini_options]
 pythonpath = [
