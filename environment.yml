@@ -3,10 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - setuptools_scm
+  - poetry
   - pytest
-  - pytest-dotenv
-  - pytest-cov
   - ruff
   - mypy
-  - build

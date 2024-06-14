@@ -1,36 +1,26 @@
 [build-system]
-requires = ["setuptools", "setuptools_scm"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[project]
+[tool.poetry]
 name = "ipp"
-dynamic = ["version"]
+version = "0.0.1"
 authors = [
-  { name="Thibault Vatter", email="thibault.vatter@gmail.com" },
+  "Thibault Vatter <thibault.vatter@gmail.com>" 
 ]
 description = "Intro to Programming with Python"
 readme = "README.md"
-license = {file = "LICENSE"}
-requires-python = "~=3.11"
-dependencies = [
-  "pytest",
-]
+license = "MIT"
+homepage = "https://github.com/tvatter/ipp"
+repository = "https://github.com/tvatter/ipp.git"
+issues = "https://github.com/tvatter/ipp/issues"
 
-# Development dependencies
-[project.optional-dependencies]
-dev = [
-  "pytest", # Testing framework
-  "ruff", # Linter and formatter
-]
+[tool.poetry.dependencies]
+python = "~=3.11"
+pytest = "*"
 
-[tool.setuptools_scm]
-version_scheme = "python-simplified-semver"
-local_scheme = "no-local-version"
-
-[project.urls]
-Homepage = "https://github.com/tvatter/ipp"
-Repository = "https://github.com/tvatter/ipp.git"
-Issues = "https://github.com/tvatter/ipp/issues"
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
 
 [tool.pytest.ini_options]
 pythonpath = [
